@@ -1,0 +1,101 @@
+.draggable-item {
+  padding: 16px;
+  margin: 0px 0px 20px 0px;
+  min-height: 40px;
+  background-color: #ffffff;
+  color: #1b3e5a;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 10px;
+  word-wrap: break-word;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.board-body:nth-child(2) {
+    border-left: 5px solid #d2deeb !important; 
+    border-right: 5px solid #d2deeb !important; 
+}
+
+
+.board-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 33%;
+  align-items: center;
+}
+
+.droppable {
+  margin: 8px;
+}
+
+.droppable-body {
+  padding: 4px;
+  width: 260px;
+  min-height: 500px;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.droppable-body::-webkit-scrollbar {
+  width: 5px;
+  
+}
+
+/* Handle */
+.droppable-body::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+
+.droppable-title {
+  color: #000083;
+  font-weight: bold;
+}
+
+.add-task {
+  /* margin: auto; */
+  /* position:absolute;
+  bottom:20px;
+  right:25%;
+  left:50%;
+  margin-left:-45%; */
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+
+  width: 85%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+}
+
+.add-task input {
+  font-family: "Rubik", sans-serif;
+  min-width: 79%;
+  border: none;
+  background-color: #edf1f8;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+.add-task button {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  padding: 10px 20px;
+  min-width: 15%;
+  font-weight: bold;
+  background-color: #00b883;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
