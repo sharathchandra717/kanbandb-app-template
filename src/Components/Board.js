@@ -18,7 +18,11 @@ const getColumns = () => ({
 });
 
 async function getCards(db) {
-  return (await db).getCards();
+  try {
+    return (await db).getCards();
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 async function handleOnDragEnd(cardsMap, result, columns, setColumns, db) {
@@ -105,6 +109,22 @@ function Board(props) {
     setShowNewCards("");
   };
 
+  const deleteTask = async (taskId) => {
+    try {
+      (await db).deleteCardById(taskId);
+      getCards(db)
+        .then((cards) => parseCards(cards))
+        .catch((error) => {
+          if (error.message === "No data found.") {
+            setColumns(getColumns());
+          }
+          console.log(error);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className="board">
@@ -130,6 +150,7 @@ function Board(props) {
                                 key={item?.id}
                                 item={item}
                                 index={index}
+                                deleteTask={deleteTask}
                               />
                             );
                           })}

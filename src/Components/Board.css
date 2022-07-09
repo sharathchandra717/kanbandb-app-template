@@ -7,6 +7,20 @@
   border-radius: 5px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 10px;
   word-wrap: break-word;
+  position: relative;
+}
+
+.delete-task {
+  position: absolute;
+  background: #adadad;
+  border-radius: 100%;
+  color: white;
+  padding: 2px 6px;
+  padding-bottom: 3px;
+  top: -3px;
+  right: -3px;
+  border: none;
+  cursor: pointer;
 }
 
 .board {
@@ -16,10 +30,9 @@
 }
 
 .board-body:nth-child(2) {
-    border-left: 5px solid #d2deeb !important; 
-    border-right: 5px solid #d2deeb !important; 
+  border-left: 5px solid #d2deeb !important;
+  border-right: 5px solid #d2deeb !important;
 }
-
 
 .board-body {
   display: flex;
@@ -42,7 +55,6 @@
 
 .droppable-body::-webkit-scrollbar {
   width: 5px;
-  
 }
 
 /* Handle */
@@ -50,7 +62,6 @@
   background: #888;
   border-radius: 5px;
 }
-
 
 .droppable-title {
   color: #000083;
