@@ -95,6 +95,7 @@
 .add-task select {
   font-family: "Rubik", sans-serif;
   background-color: #edf1f8;
+  border: none;
   min-width: 12%;
   padding: 10px 10px;
   border-radius: 5px;
