@@ -73,6 +73,7 @@ function Board(props) {
   const [showNewCards, setShowNewCards] = useState("");
   const [cardsMap, setCardsMap] = useState({});
   const [newTask, setNewTask] = useState("");
+  const [taskType, setTaskType] = useState("TODO");
 
   const onDragEnd = (result, columns, setColumns, db) => {
     handleOnDragEnd(cardsMap, result, columns, setColumns, db);
@@ -101,7 +102,7 @@ function Board(props) {
     if (newTask) {
       (await db).addCard({
         name: newTask,
-        status: "TODO",
+        status: taskType,
       });
     }
     setShowNewCards(newTask);
@@ -166,6 +167,11 @@ function Board(props) {
         </DragDropContext>
       </div>
       <div className="add-task">
+        <select onChange={(e) => setTaskType(e?.currentTarget?.value)}>
+          <option value="TODO">To-do</option>
+          <option value="IN_PROGRESS">In Progress</option>
+          <option value="DONE">Done</option>
+        </select>
         <input
           type="text"
           value={newTask}
